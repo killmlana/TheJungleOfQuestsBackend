@@ -1,0 +1,6 @@
+@TheJungleOfQuestsBackend_HostAddress = http://localhost:5110
+
+GET {{TheJungleOfQuestsBackend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
