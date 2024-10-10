@@ -38,7 +38,7 @@ public class AuthController : ControllerBase
             }
 
             // Find the user in the database by email
-            var user = await _context.Users.SingleOrDefaultAsync(u => u.Email == userDto.Email.ToLower());
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == userDto.Email.ToLower());
 
             if (user == null)
             {
@@ -58,3 +58,5 @@ public class AuthController : ControllerBase
             return Ok(new { message = "Login successful", token });
         }
 }
+
+//TODO check for duplicates before registering
